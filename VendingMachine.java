@@ -13,4 +13,6 @@ public interface VendingMachine {
     public void getProdukt(Double temperature);
 
     public void getProdukt(int volume);
+
+    
 }

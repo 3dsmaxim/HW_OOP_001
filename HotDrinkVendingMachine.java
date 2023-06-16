@@ -1,7 +1,10 @@
+
+import java.util.Iterator;
 import java.util.LinkedList;
 
-public class HotDrinkVendingMachine implements VendingMachine {
+public class HotDrinkVendingMachine implements VendingMachine, Iterator<HotDrink> {
     private LinkedList<HotDrink> l = new LinkedList<>();
+    private int count;
 
     public void adder(HotDrink item) {
         this.l.addFirst(item);
@@ -101,5 +104,39 @@ public class HotDrinkVendingMachine implements VendingMachine {
         }
 
     }
+
+    
+    
+    
+
+    
+
+    @Override
+    public boolean hasNext() {
+
+    return count < l.size();
+    }
+
+    @Override
+    public HotDrink next() {
+        if (!hasNext()) {
+            System.out.println("-----0------");
+        }
+        return l.get(count++);
+    }
+    
+    public LinkedList<HotDrink> getL() {
+       
+        return l;
+    }
+
+    
+
+    
+    
+
+
+    
+
 
 }
